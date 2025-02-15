@@ -200,3 +200,4 @@ https://api.openweathermap.org/data/2.5/weather?q=<CITY_NAME>&appid=YOUR_API_KEY
 * Mistral AI – Large language model for chatbot responses.
 * OpenWeather API – Provides live weather data.
 * Python – Core programming language.
+
