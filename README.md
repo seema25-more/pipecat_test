@@ -4,15 +4,15 @@
 
 #### Features:
 
-##### Mistral AI Integration - Uses an LLM to understand and respond to queries.
+##### Mistral AI Integration : Uses an LLM to understand and respond to queries.
 
-##### API Function Calling  - Detects when an API call is needed (e.g., weather queries).
+##### API Function Calling : Detects when an API call is needed (e.g., weather queries).
 
-##### Real-time Weather Data – Fetches live weather information from OpenWeather.
+##### Real-time Weather Data : Fetches live weather information from OpenWeather.
 
-##### Dynamic City Recognition – Extracts city names from user input.
+##### Dynamic City Recognition : Extracts city names from user input.
 
-##### User Prompt Handling – If no city is provided, the chatbot asks for one.
+##### User Prompt Handling : If no city is provided, the chatbot asks for one.
 
 ## Installation & Setup
 
@@ -41,83 +41,13 @@
 
 ##### After verifying your Python version, install Pipecat with:
 
-
-```python
 pip install "pipecat-ai[cartesia,openai]"
-```
-
-    Requirement already satisfied: pipecat-ai[cartesia,openai] in c:\users\admin\anaconda3\envs\pipecatfinal\lib\site-packages (0.0.56)
-    Requirement already satisfied: aiohttp~=3.11.11 in c:\users\admin\anaconda3\envs\pipecatfinal\lib\site-packages (from pipecat-ai[cartesia,openai]) (3.11.12)
-    Requirement already satisfied: httpx~=0.27.2 in c:\users\admin\anaconda3\envs\pipecatfinal\lib\site-packages (from pipecat-ai[cartesia,openai]) (0.27.2)
-    Requirement already satisfied: loguru~=0.7.3 in c:\users\admin\anaconda3\envs\pipecatfinal\lib\site-packages (from pipecat-ai[cartesia,openai]) (0.7.3)
-    Requirement already satisfied: Markdown~=3.7 in c:\users\admin\anaconda3\envs\pipecatfinal\lib\site-packages (from pipecat-ai[cartesia,openai]) (3.7)
-    Requirement already satisfied: numpy~=1.26.4 in c:\users\admin\anaconda3\envs\pipecatfinal\lib\site-packages (from pipecat-ai[cartesia,openai]) (1.26.4)
-    Requirement already satisfied: Pillow~=11.1.0 in c:\users\admin\anaconda3\envs\pipecatfinal\lib\site-packages (from pipecat-ai[cartesia,openai]) (11.1.0)
-    Requirement already satisfied: protobuf~=5.29.3 in c:\users\admin\anaconda3\envs\pipecatfinal\lib\site-packages (from pipecat-ai[cartesia,openai]) (5.29.3)
-    Requirement already satisfied: pydantic~=2.10.5 in c:\users\admin\anaconda3\envs\pipecatfinal\lib\site-packages (from pipecat-ai[cartesia,openai]) (2.10.6)
-    Requirement already satisfied: pyloudnorm~=0.1.1 in c:\users\admin\anaconda3\envs\pipecatfinal\lib\site-packages (from pipecat-ai[cartesia,openai]) (0.1.1)
-    Requirement already satisfied: resampy~=0.4.3 in c:\users\admin\anaconda3\envs\pipecatfinal\lib\site-packages (from pipecat-ai[cartesia,openai]) (0.4.3)
-    Requirement already satisfied: soxr~=0.5.0 in c:\users\admin\anaconda3\envs\pipecatfinal\lib\site-packages (from pipecat-ai[cartesia,openai]) (0.5.0.post1)
-    Requirement already satisfied: cartesia~=1.3.1 in c:\users\admin\anaconda3\envs\pipecatfinal\lib\site-packages (from pipecat-ai[cartesia,openai]) (1.3.1)
-    Requirement already satisfied: websockets~=13.1 in c:\users\admin\anaconda3\envs\pipecatfinal\lib\site-packages (from pipecat-ai[cartesia,openai]) (13.1)
-    Requirement already satisfied: openai~=1.59.6 in c:\users\admin\anaconda3\envs\pipecatfinal\lib\site-packages (from pipecat-ai[cartesia,openai]) (1.59.9)
-    Requirement already satisfied: python-deepcompare~=2.1.0 in c:\users\admin\anaconda3\envs\pipecatfinal\lib\site-packages (from pipecat-ai[cartesia,openai]) (2.1.0)
-    Requirement already satisfied: aiohappyeyeballs>=2.3.0 in c:\users\admin\anaconda3\envs\pipecatfinal\lib\site-packages (from aiohttp~=3.11.11->pipecat-ai[cartesia,openai]) (2.4.6)
-    Requirement already satisfied: aiosignal>=1.1.2 in c:\users\admin\anaconda3\envs\pipecatfinal\lib\site-packages (from aiohttp~=3.11.11->pipecat-ai[cartesia,openai]) (1.3.2)
-    Requirement already satisfied: attrs>=17.3.0 in c:\users\admin\anaconda3\envs\pipecatfinal\lib\site-packages (from aiohttp~=3.11.11->pipecat-ai[cartesia,openai]) (25.1.0)
-    Requirement already satisfied: frozenlist>=1.1.1 in c:\users\admin\anaconda3\envs\pipecatfinal\lib\site-packages (from aiohttp~=3.11.11->pipecat-ai[cartesia,openai]) (1.5.0)
-    Requirement already satisfied: multidict<7.0,>=4.5 in c:\users\admin\anaconda3\envs\pipecatfinal\lib\site-packages (from aiohttp~=3.11.11->pipecat-ai[cartesia,openai]) (6.1.0)
-    Requirement already satisfied: propcache>=0.2.0 in c:\users\admin\anaconda3\envs\pipecatfinal\lib\site-packages (from aiohttp~=3.11.11->pipecat-ai[cartesia,openai]) (0.2.1)
-    Requirement already satisfied: yarl<2.0,>=1.17.0 in c:\users\admin\anaconda3\envs\pipecatfinal\lib\site-packages (from aiohttp~=3.11.11->pipecat-ai[cartesia,openai]) (1.18.3)
-    Requirement already satisfied: iterators>=0.2.0 in c:\users\admin\anaconda3\envs\pipecatfinal\lib\site-packages (from cartesia~=1.3.1->pipecat-ai[cartesia,openai]) (0.2.0)
-    Requirement already satisfied: requests>=2.31.0 in c:\users\admin\anaconda3\envs\pipecatfinal\lib\site-packages (from cartesia~=1.3.1->pipecat-ai[cartesia,openai]) (2.32.3)
-    Requirement already satisfied: anyio in c:\users\admin\anaconda3\envs\pipecatfinal\lib\site-packages (from httpx~=0.27.2->pipecat-ai[cartesia,openai]) (4.8.0)
-    Requirement already satisfied: certifi in c:\users\admin\anaconda3\envs\pipecatfinal\lib\site-packages (from httpx~=0.27.2->pipecat-ai[cartesia,openai]) (2024.12.14)
-    Requirement already satisfied: httpcore==1.* in c:\users\admin\anaconda3\envs\pipecatfinal\lib\site-packages (from httpx~=0.27.2->pipecat-ai[cartesia,openai]) (1.0.7)
-    Requirement already satisfied: idna in c:\users\admin\anaconda3\envs\pipecatfinal\lib\site-packages (from httpx~=0.27.2->pipecat-ai[cartesia,openai]) (3.10)
-    Requirement already satisfied: sniffio in c:\users\admin\anaconda3\envs\pipecatfinal\lib\site-packages (from httpx~=0.27.2->pipecat-ai[cartesia,openai]) (1.3.1)
-    Requirement already satisfied: h11<0.15,>=0.13 in c:\users\admin\anaconda3\envs\pipecatfinal\lib\site-packages (from httpcore==1.*->httpx~=0.27.2->pipecat-ai[cartesia,openai]) (0.14.0)
-    Requirement already satisfied: colorama>=0.3.4 in c:\users\admin\anaconda3\envs\pipecatfinal\lib\site-packages (from loguru~=0.7.3->pipecat-ai[cartesia,openai]) (0.4.6)
-    Requirement already satisfied: win32-setctime>=1.0.0 in c:\users\admin\anaconda3\envs\pipecatfinal\lib\site-packages (from loguru~=0.7.3->pipecat-ai[cartesia,openai]) (1.2.0)
-    Requirement already satisfied: distro<2,>=1.7.0 in c:\users\admin\anaconda3\envs\pipecatfinal\lib\site-packages (from openai~=1.59.6->pipecat-ai[cartesia,openai]) (1.9.0)
-    Requirement already satisfied: jiter<1,>=0.4.0 in c:\users\admin\anaconda3\envs\pipecatfinal\lib\site-packages (from openai~=1.59.6->pipecat-ai[cartesia,openai]) (0.8.2)
-    Requirement already satisfied: tqdm>4 in c:\users\admin\anaconda3\envs\pipecatfinal\lib\site-packages (from openai~=1.59.6->pipecat-ai[cartesia,openai]) (4.67.1)
-    Requirement already satisfied: typing-extensions<5,>=4.11 in c:\users\admin\anaconda3\envs\pipecatfinal\lib\site-packages (from openai~=1.59.6->pipecat-ai[cartesia,openai]) (4.12.2)
-    Requirement already satisfied: annotated-types>=0.6.0 in c:\users\admin\anaconda3\envs\pipecatfinal\lib\site-packages (from pydantic~=2.10.5->pipecat-ai[cartesia,openai]) (0.7.0)
-    Requirement already satisfied: pydantic-core==2.27.2 in c:\users\admin\anaconda3\envs\pipecatfinal\lib\site-packages (from pydantic~=2.10.5->pipecat-ai[cartesia,openai]) (2.27.2)
-    Requirement already satisfied: scipy>=1.0.1 in c:\users\admin\anaconda3\envs\pipecatfinal\lib\site-packages (from pyloudnorm~=0.1.1->pipecat-ai[cartesia,openai]) (1.15.1)
-    Requirement already satisfied: future>=0.16.0 in c:\users\admin\anaconda3\envs\pipecatfinal\lib\site-packages (from pyloudnorm~=0.1.1->pipecat-ai[cartesia,openai]) (1.0.0)
-    Requirement already satisfied: numba>=0.53 in c:\users\admin\anaconda3\envs\pipecatfinal\lib\site-packages (from resampy~=0.4.3->pipecat-ai[cartesia,openai]) (0.61.0)
-    Requirement already satisfied: llvmlite<0.45,>=0.44.0dev0 in c:\users\admin\anaconda3\envs\pipecatfinal\lib\site-packages (from numba>=0.53->resampy~=0.4.3->pipecat-ai[cartesia,openai]) (0.44.0)
-    Requirement already satisfied: charset_normalizer<4,>=2 in c:\users\admin\anaconda3\envs\pipecatfinal\lib\site-packages (from requests>=2.31.0->cartesia~=1.3.1->pipecat-ai[cartesia,openai]) (3.4.1)
-    Requirement already satisfied: urllib3<3,>=1.21.1 in c:\users\admin\anaconda3\envs\pipecatfinal\lib\site-packages (from requests>=2.31.0->cartesia~=1.3.1->pipecat-ai[cartesia,openai]) (2.3.0)
-    Note: you may need to restart the kernel to use updated packages.
-    
 
 ### 5. Install Mistral AI and Other Requirements
 
 ##### Mistral AI requires an API key. Install it using:
 
-
-```python
 pip install mistralai
-```
-
-    Requirement already satisfied: mistralai in c:\users\admin\anaconda3\envs\pipecatfinal\lib\site-packages (0.4.2)
-    Requirement already satisfied: httpx<1,>=0.25 in c:\users\admin\anaconda3\envs\pipecatfinal\lib\site-packages (from mistralai) (0.27.2)
-    Requirement already satisfied: orjson<3.11,>=3.9.10 in c:\users\admin\anaconda3\envs\pipecatfinal\lib\site-packages (from mistralai) (3.10.15)
-    Requirement already satisfied: pydantic<3,>=2.5.2 in c:\users\admin\anaconda3\envs\pipecatfinal\lib\site-packages (from mistralai) (2.10.6)
-    Requirement already satisfied: anyio in c:\users\admin\anaconda3\envs\pipecatfinal\lib\site-packages (from httpx<1,>=0.25->mistralai) (4.8.0)
-    Requirement already satisfied: certifi in c:\users\admin\anaconda3\envs\pipecatfinal\lib\site-packages (from httpx<1,>=0.25->mistralai) (2024.12.14)
-    Requirement already satisfied: httpcore==1.* in c:\users\admin\anaconda3\envs\pipecatfinal\lib\site-packages (from httpx<1,>=0.25->mistralai) (1.0.7)
-    Requirement already satisfied: idna in c:\users\admin\anaconda3\envs\pipecatfinal\lib\site-packages (from httpx<1,>=0.25->mistralai) (3.10)
-    Requirement already satisfied: sniffio in c:\users\admin\anaconda3\envs\pipecatfinal\lib\site-packages (from httpx<1,>=0.25->mistralai) (1.3.1)
-    Requirement already satisfied: h11<0.15,>=0.13 in c:\users\admin\anaconda3\envs\pipecatfinal\lib\site-packages (from httpcore==1.*->httpx<1,>=0.25->mistralai) (0.14.0)
-    Requirement already satisfied: annotated-types>=0.6.0 in c:\users\admin\anaconda3\envs\pipecatfinal\lib\site-packages (from pydantic<3,>=2.5.2->mistralai) (0.7.0)
-    Requirement already satisfied: pydantic-core==2.27.2 in c:\users\admin\anaconda3\envs\pipecatfinal\lib\site-packages (from pydantic<3,>=2.5.2->mistralai) (2.27.2)
-    Requirement already satisfied: typing-extensions>=4.12.2 in c:\users\admin\anaconda3\envs\pipecatfinal\lib\site-packages (from pydantic<3,>=2.5.2->mistralai) (4.12.2)
-    Note: you may need to restart the kernel to use updated packages.
-    
 
 ### 6. Set Up API Keys
 
@@ -207,7 +137,6 @@ def extract_city(prompt):
     match = re.search(r"\b(?:in|weather|temperature|for)?\s*([A-Za-z\s]+)$", prompt, re.IGNORECASE)
     if match:
         city = match.group(1).strip()
-        # Ensure it's not a generic word like 'weather' or 'temperature'
         if len(city) > 2 and city.lower() not in ["weather", "temperature", "like"]:
             return city
     return None
@@ -239,19 +168,21 @@ print(chat_with_mistral("Weather Tokyo"))
 print(chat_with_mistral("Tell me a joke."))  
 ```
 
-    Hello! I'm just a computer program, so I don't have feelings, but I'm here to help you with any language-related questions you have. Is there something specific you would like to know or practice?
+    Hello! I'm just a computer program, so I don't have feelings, but I'm here and ready to assist you with any questions you have to the best of my ability. How can I help you today?
     
 
-    Which city's weather do you want to know?  berlin
+    Which city's weather do you want to know?  frankfurt
     
 
-    The weather in berlin is overcast clouds with a temperature of 0.2°C.
-    The weather in Tokyo is overcast clouds with a temperature of 10.76°C.
-    Sure, here's a joke for you: 
+    The weather in frankfurt is overcast clouds with a temperature of 0.84°C.
+    The weather in Tokyo is broken clouds with a temperature of 8.71°C.
+    Of course, I'd be happy to share a joke with you! Here it is:
     
     Why don't scientists trust atoms?
     
     Because they make up everything!
+    
+    I hope that brought a smile to your face. Would you like to ask me anything else?
     
 
 ## API Integration
@@ -271,13 +202,3 @@ print(chat_with_mistral("Tell me a joke."))
 ##### OpenWeather API – Provides live weather data.
 
 ##### Python – Core programming language.
-
-
-```python
-
-```
-
-
-```python
-
-```
