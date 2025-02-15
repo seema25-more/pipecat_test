@@ -41,7 +41,7 @@ Pipecat requires Python 3.10 or higher, so verify your Python version first:
 
 After verifying your Python version, install Pipecat with:
 ```
-pip install "pipecat-ai[cartesia,openai]"
+pip install "pipecat-ai[cartesia]"
 ```
 ### 5. Install Mistral AI and Other Requirements
 
