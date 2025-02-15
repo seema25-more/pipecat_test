@@ -1,33 +1,33 @@
 # Pipecat x Function Callable Models (API Triggers from LLM Responses)
 
-##### This project extends Pipecat with Mistral AI to detect and automatically execute API calls when a request requires external data, such as weather information. The chatbot identifies relevant user queries, fetches real-time data using the OpenWeather API, and provides a smart response.
+This project extends Pipecat with Mistral AI to detect and automatically execute API calls when a request requires external data, such as weather information. The chatbot identifies relevant user queries, fetches real-time data using the OpenWeather API, and provides a smart response.
 
-#### Features:
+### Features:
 
-##### Mistral AI Integration : Uses an LLM to understand and respond to queries.
-
-##### API Function Calling : Detects when an API call is needed (e.g., weather queries).
-
-##### Real-time Weather Data : Fetches live weather information from OpenWeather.
-
-##### Dynamic City Recognition : Extracts city names from user input.
-
-##### User Prompt Handling : If no city is provided, the chatbot asks for one.
+* Mistral AI Integration : Uses an LLM to understand and respond to queries.
+* API Function Calling : Detects when an API call is needed (e.g., weather queries).
+* Real-time Weather Data : Fetches live weather information from OpenWeather.
+* Dynamic City Recognition : Extracts city names from user input.
+* User Prompt Handling : If no city is provided, the chatbot asks for one.
 
 ## Installation & Setup
 
 ### 1. Create and Activate Conda Environment
 
-##### conda create --name pipecatfinal
-##### conda activate pipecatfinal
+```
+conda create --name pipecatfinal
+conda activate pipecatfinal
+```
 
 ### 2. Install Jupyter Notebook
 
-##### pip install notebook
+```
+pip install notebook
+```
 
 ### 3. Check Python Version in Jupyter Notebook
 
-##### Pipecat requires Python 3.10 or higher, so verify your Python version first:
+Pipecat requires Python 3.10 or higher, so verify your Python version first:
 
 
 ```python
@@ -39,29 +39,29 @@
 
 ### 4. Install Pipecat
 
-##### After verifying your Python version, install Pipecat with:
-
-##### pip install "pipecat-ai[cartesia,openai]"
-
+After verifying your Python version, install Pipecat with:
+```
+pip install "pipecat-ai[cartesia,openai]"
+```
 ### 5. Install Mistral AI and Other Requirements
 
-##### Mistral AI requires an API key. Install it using:
-
-##### pip install mistralai
-
+Mistral AI requires an API key. Install it using:
+```
+pip install mistralai
+```
 ### 6. Set Up API Keys
 
-##### Set API keys for Mistral AI and OpenWeather API in jupyter notebook:
+Set API keys for Mistral AI and OpenWeather API in jupyter notebook:
 
 
 ```python
 import os
 
 # Set API key for Mistral AI
-os.environ["MISTRAL_API_KEY"] = "jZ0LwrCqyyIQuyG4oL1dpkL9kK8ZXgh8"
+os.environ["MISTRAL_API_KEY"] = "SECRETMISTRALKEY"
 
 # Set OpenWeather API key
-os.environ["OPENWEATHER_API_KEY"] = "826fc967f2f08c11068a989501e0c2ba"
+os.environ["OPENWEATHER_API_KEY"] = "SUPERSECRETOPENWEATHERKEY"
 ```
 
 
@@ -71,8 +71,8 @@ print("Mistral API Key:", os.getenv("MISTRAL_API_KEY"))
 print("OpenWeather API Key:", os.getenv("OPENWEATHER_API_KEY"))
 ```
 
-    Mistral API Key: jZ0LwrCqyyIQuyG4oL1dpkL9kK8ZXgh8
-    OpenWeather API Key: 826fc967f2f08c11068a989501e0c2ba
+    Mistral API Key: SECRETMISTRALKEY
+    OpenWeather API Key: SUPERSECRETOPENWEATHERKEY
     
 
 ### 7. Import Required Libraries
@@ -85,7 +85,7 @@ import re
 from mistralai.client import MistralClient
 ```
 
-##### These libraries are required for handling API calls, processing text, and interacting with Mistral AI and Pipecat.
+These libraries are required for handling API calls, processing text, and interacting with Mistral AI and Pipecat.
 
 ### 8. Initialize Mistral Client
 
@@ -94,7 +94,7 @@ from mistralai.client import MistralClient
 client = MistralClient(api_key=os.environ["MISTRAL_API_KEY"])
 ```
 
-##### This ensures that Mistral AI is properly configured to handle chatbot queries.
+This ensures that Mistral AI is properly configured to handle chatbot queries.
 
 ## How to Use the Chatbot
 
@@ -185,20 +185,18 @@ print(chat_with_mistral("Tell me a joke."))
     I hope that brought a smile to your face. Would you like to ask me anything else?
     
 
-## API Integration
+### API Integration
 
-##### This chatbot detects when a user asks for the weather and automatically triggers an API call to OpenWeather to fetch real-time weather data.
+This chatbot detects when a user asks for the weather and automatically triggers an API call to OpenWeather to fetch real-time weather data.
 
 #### Example API Call:
+```
+https://api.openweathermap.org/data/2.5/weather?q=<CITY_NAME>&appid=YOUR_API_KEY&units=metric
+```
 
-##### https://api.openweathermap.org/data/2.5/weather?q=<CITY_NAME>&appid=YOUR_API_KEY&units=metric
+## Technologies Used:
 
-#### Technologies Used
-
-##### Pipecat – Framework for function calling.
-
-##### Mistral AI – Large language model for chatbot responses.
-
-##### OpenWeather API – Provides live weather data.
-
-##### Python – Core programming language.
+* Pipecat – Framework for function calling.
+* Mistral AI – Large language model for chatbot responses.
+* OpenWeather API – Provides live weather data.
+* Python – Core programming language.
