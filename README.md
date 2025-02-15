@@ -41,13 +41,13 @@
 
 ##### After verifying your Python version, install Pipecat with:
 
-pip install "pipecat-ai[cartesia,openai]"
+##### pip install "pipecat-ai[cartesia,openai]"
 
 ### 5. Install Mistral AI and Other Requirements
 
 ##### Mistral AI requires an API key. Install it using:
 
-pip install mistralai
+##### pip install mistralai
 
 ### 6. Set Up API Keys
 
@@ -202,17 +202,3 @@ print(chat_with_mistral("Tell me a joke."))
 ##### OpenWeather API – Provides live weather data.
 
 ##### Python – Core programming language.
-
-
-```python
-!jupyter nbconvert --to markdown README.ipynb
-```
-
-    [NbConvertApp] Converting notebook README.ipynb to markdown
-    [NbConvertApp] Writing 6052 bytes to README.md
-    
-
-
-```python
-
-```
